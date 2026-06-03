@@ -10,6 +10,12 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  
+  /* Palet Warna Café Aroma dari Gambar */
+  --color-cafe-bg: #eeebe6;
+  --color-cafe-dark: #3d352e;
+  --color-cafe-dark-hover: #2b2520;
+  --color-cafe-border: #dfdad3;
 }
 
 @media (prefers-color-scheme: dark) {
