@@ -73,7 +73,7 @@ export const CoffeMenu: React.FC = () => {
   };
 
   return (
-    <section className="bg-cafe-bg py-20 overflow-hidden relative">
+    <section className="bg-cafe-bg py-10 overflow-hidden relative">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         
         <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-24 md:mb-32 gap-6 relative z-20">
@@ -110,7 +110,7 @@ export const CoffeMenu: React.FC = () => {
 
       <div 
         ref={sliderRef}
-        className="flex gap-4 md:gap-8 overflow-x-auto snap-x snap-mandatory pb-24 pt-16 -mt-16 scroll-smooth [&::-webkit-scrollbar]:hidden [-ms-overflow-style:'none'] [scrollbar-width:'none'] w-full"
+        className="flex gap-4 md:gap-5 overflow-x-auto snap-x snap-mandatory pb-24 pt-10 -mt-16 scroll-smooth [&::-webkit-scrollbar]:hidden [-ms-overflow-style:'none'] [scrollbar-width:'none'] w-full"
       >
         {/* SPACER KIRI */}
         <div className="shrink-0 w-[calc(50vw-9rem)] md:w-[calc(50vw-10rem)] snap-center"></div>

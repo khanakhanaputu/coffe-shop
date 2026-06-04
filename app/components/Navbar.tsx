@@ -9,7 +9,8 @@ export const Navbar: React.FC = () => {
   };
 
   return (
-    <nav className="bg-cafe-bg text-cafe-dark px-6 py-4 md:px-12 md:py-6 relative z-50 shadow-sm">
+    // Perubahan ada di baris ini: 'relative' diganti jadi 'sticky top-0'
+    <nav className="bg-cafe-bg text-cafe-dark px-6 py-4 md:px-12 md:py-6 sticky top-0 z-50">
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         
         <div className="text-xl md:text-2xl font-black italic tracking-wide uppercase">
