@@ -95,19 +95,26 @@ export const CustomerReviews: React.FC = () => {
       {/* CAROUSEL SLIDER */}
       <div 
         ref={sliderRef}
-        className="flex gap-6 md:gap-10 overflow-x-auto snap-x snap-mandatory px-6 md:px-12 pb-12 pt-4 scroll-smooth [&::-webkit-scrollbar]:hidden [-ms-overflow-style:'none'] [scrollbar-width:'none']"
+        // Tambahkan pt-12 khusus mobile agar foto yang menonjol ke atas tidak terpotong
+        className="flex gap-6 md:gap-10 overflow-x-auto snap-x snap-mandatory px-6 md:px-12 pb-12 pt-12 md:pt-4 scroll-smooth [&::-webkit-scrollbar]:hidden [-ms-overflow-style:'none'] [scrollbar-width:'none']"
       >
         {reviewsData.map((review) => (
           <div 
             key={review.id} 
-            className="relative snap-center shrink-0 w-[340px] md:w-[480px] py-6 md:py-8 pl-10 md:pl-12 pr-6"
+            // Mobile: pt-12 px-6 (karena foto di atas). Desktop kembali ke asli: md:py-8 md:pl-12 md:pr-6
+            className="relative snap-center shrink-0 w-[340px] md:w-[480px] pt-12 pb-6 px-6 md:py-8 md:pl-12 md:pr-6"
           >
-            {/* BACKGROUND BOX KREM MUDUR */}
-            <div className="absolute inset-y-0 right-0 left-16 md:left-24 bg-[#e5e1d5] -z-10 shadow-sm" />
+            {/* BACKGROUND BOX KREM */}
+            {/* Mobile: full (left-0). Desktop kembali ke asli: md:left-24 */}
+            <div className="absolute inset-y-0 right-0 left-0 md:left-24 bg-[#e5e1d5] -z-10 shadow-sm" />
             
-            <div className="flex gap-5 md:gap-8 items-center h-full">
+            {/* CONTAINER KONTEN */}
+            {/* Mobile: flex-col, p-4. Desktop kembali ke asli: md:flex-row, bg-amber-50, md:p-0 */}
+            <div className="flex flex-col md:flex-row gap-5 md:gap-8 items-center h-full bg-amber-50 rounded-lg md:rounded-none p-4 md:p-0">
+              
               {/* GAMBAR BARISTA SQUARE OVERLAPPING */}
-              <div className="w-24 h-24 md:w-36 md:h-36 shrink-0 border-[3px] md:border-[4px] border-cafe-dark relative -ml-10 md:-ml-12 shadow-lg bg-cafe-bg">
+              {/* Mobile: -mt-16 (nembus ke atas). Desktop kembali ke asli: md:mt-0 md:-ml-12 md:-mb-10 */}
+              <div className="w-24 h-24 md:w-36 md:h-36 shrink-0 border-[3px] md:border-[4px] border-cafe-dark relative -mt-16 md:mt-0 md:-ml-12 shadow-lg bg-cafe-bg md:-mb-10">
                 <img 
                   src={review.image} 
                   alt={review.name} 
@@ -116,12 +123,13 @@ export const CustomerReviews: React.FC = () => {
               </div>
               
               {/* KONTEN TEXT ULASAN */}
-              <div className="flex flex-col py-2">
+              {/* Mobile: text-center. Desktop: md:text-left */}
+              <div className="flex flex-col py-2 text-center md:text-left items-center md:items-start">
                 <h4 className="text-lg md:text-xl font-black font-sans uppercase tracking-wider text-cafe-dark mb-2 md:mb-3">
                   {review.name}
                 </h4>
                 
-                <p className="font-serif text-sm leading-relaxed text-cafe-dark/80 mb-4 pr-2">
+                <p className="font-serif text-sm leading-relaxed text-cafe-dark/80 mb-4 md:pr-2">
                   {review.text}
                 </p>
                 
